@@ -35,7 +35,7 @@ module.exports = (config) => {
   return {
     dir: {
       input: 'src/',
-      output: 'public/',
+      output: '_site/',
       data: `_data/`,
     },
     templateFormats: ['njk', '11ty.js', 'md'],
