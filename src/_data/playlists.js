@@ -43,7 +43,7 @@ async function getPlaylists(token) {
 }
 
 module.exports = async function fetchPlaylists() {
-  if (process.env.ELEVENTY_ENV !== 'production') {
+  
     return [
       {
         name: 'フロー flow',
@@ -74,22 +74,21 @@ module.exports = async function fetchPlaylists() {
           'https://i.scdn.co/image/ab67706c0000bebb666bf1679f180a6ed8a26429',
       },
     ];
-  }
 
-  const { access_token: token } = await getAccessToken();
+  // const { access_token: token } = await getAccessToken();
 
-  const playlists = await getPlaylists(token);
+  // const playlists = await getPlaylists(token);
 
-  const relevantPlaylists = playlists
-    .filter((p) => p.description.startsWith('@') && p.description.endsWith('@'))
-    .map((p) => {
-      return {
-        name: p.name,
-        url: p.external_urls.spotify,
-        description: p.description.slice(1, p.description.length - 1).trim(),
-        image: p.images[0].url,
-      };
-    });
+  // const relevantPlaylists = playlists
+  //   .filter((p) => p.description.startsWith('@') && p.description.endsWith('@'))
+  //   .map((p) => {
+  //     return {
+  //       name: p.name,
+  //       url: p.external_urls.spotify,
+  //       description: p.description.slice(1, p.description.length - 1).trim(),
+  //       image: p.images[0].url,
+  //     };
+  //   });
 
-  return relevantPlaylists;
+  // return relevantPlaylists;
 };

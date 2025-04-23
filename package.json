@@ -11,8 +11,8 @@
     "build:prod": "run-s build purge-css critical-css minify-html",
     "lint": "eslint --ignore-pattern=\"node_modules\" .",
     "format": "prettier --write \"**/*.{js,json}\"",
-    "critical-css": "./scripts/critical-css.js",
-    "minify-html": "./scripts/minify-html.js",
+    "critical-css": "node ./scripts/critical-css.js",
+    "minify-html": "node ./scripts/minify-html.js",
     "purge-css": "purgecss -c purgecss.config.js"
   },
   "repository": {
